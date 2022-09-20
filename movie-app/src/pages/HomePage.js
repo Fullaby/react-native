@@ -58,7 +58,8 @@ export default function HomePage(){
     let deleteMyList=(id)=>{
         let datas=JSON.parse(localStorage.getItem('listed'))
        let newData= datas.listing.filter((el)=> el.id !== id )
-       localStorage.setItem('listed', JSON.stringify(preferList))
+       localStorage.setItem('listed', JSON.stringify(newData))
+       fetchLists()
     }
 
     return(
