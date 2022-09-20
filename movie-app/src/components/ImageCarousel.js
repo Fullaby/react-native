@@ -20,7 +20,7 @@ export default function ImageCarousel(){
     },[])
     return(
         <div id="carouselExampleCaptions" className="carousel slide relative" data-bs-ride="carousel">
-        <div className="carousel-inner relative overflow-hidden" style={{width: '800px'}}>
+        <div className="carousel-inner relative overflow-hidden" style={{width: '500px'}}>
             {movieLoading&& <h1>Loading...</h1>}
             {!movieLoading && movie.results.map((el,idx)=>
           <div className="carousel-item active relative float-left w-full" key={idx}>
