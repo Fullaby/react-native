@@ -19,24 +19,37 @@ export default function ImageCarousel(){
             })
     },[])
     return(
-        <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel" style={{width: '400px'}}>
-  <div className="carousel-inner">
-    {movieLoading && <h1>Loading...</h1>}
-    {!movieLoading && movie.results.map((el,idx)=>
-    <div className="carousel-item active" key={idx}>
-      <img src={`https://image.tmdb.org/t/p/w500${el.backdrop_path}`} className="d-block w-100" alt="..."/>
-    </div>
-    )}
-    
-  </div>
-  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Previous</span>
-  </button>
-  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Next</span>
-  </button>
-</div>
+        <div id="carouselExampleCaptions" className="carousel slide relative" data-bs-ride="carousel">
+        <div className="carousel-inner relative overflow-hidden" style={{width: '800px'}}>
+            {movieLoading&& <h1>Loading...</h1>}
+            {!movieLoading && movie.results.map((el,idx)=>
+          <div className="carousel-item active relative float-left w-full" key={idx}>
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${el.backdrop_path}`}
+              className="block w-full"
+              alt="..."
+            />
+          </div>
+          )}
+        </div>
+        <button
+          className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span className="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span className="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
     )
 }
