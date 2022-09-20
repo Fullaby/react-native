@@ -52,7 +52,7 @@ export default function HomePage(){
     let listSet= (images)=>{
         preferList.listing.push(images)
         localStorage.setItem('listed', JSON.stringify(preferList))
-       
+        
     }
 
     let deleteMyList=(id)=>{
@@ -63,11 +63,11 @@ export default function HomePage(){
     }
 
     return(
-        <div className="bg-gray-100">
+        <div style={{backgroundColor: '#D2DAFF'}}>
             <HeadBar/>
             <div>
             <div>
-            <h1 style={{fontSize: '50pt'}}>My List</h1>
+            <h1 className='pt-10 pl-5' style={{fontSize: '40pt'}}>My List</h1>
             </div>
           <div className="">
             <div className="w-full">
@@ -77,7 +77,7 @@ export default function HomePage(){
                   className="flex flex-no-wrap overflow-x-scroll scrolling-touch items-start mb-10"
                 >
                 
-                {lists == null || lists.length== 0 ? <h1 style={{fontSize: '30pt'}}>Nothing here! Scroll to discover more</h1> : lists.listing.map((mov,idx)=>
+                {lists == null || lists.length== 0 ? <h1 className="pt-24 pb-24 pl-10" style={{fontSize: '30pt'}}>Nothing here! Scroll to discover more</h1> : lists.listing.map((mov,idx)=>
                   <div key={idx}
                     className="flex-none mr-8 rounded-lg hover:scale-125 hover:bg-red-200 transition-all duration-300 pb-16 pt-16 pl-10 pr-10"
                   >
