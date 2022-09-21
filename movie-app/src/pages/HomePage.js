@@ -67,7 +67,7 @@ export default function HomePage(){
             <HeadBar/>
             <div>
             <div>
-            <h1 className='pt-10 pl-5' style={{fontSize: '40pt'}}>My List</h1>
+            <h1 className='pt-10 pl-5' style={{fontSize: '40pt', color: '#100720'}}>My List</h1>
             </div>
           <div className="">
             <div className="w-full">
@@ -101,7 +101,7 @@ export default function HomePage(){
             {loading && <h1>Loading...</h1>}
             {!loading &&  movieGenre.genres.map((el,idx)=>
             <div key={idx}>
-            <h1 className="pl-10" style={{fontSize: '40pt'}}>{el.name}</h1>
+            <h1 className="pl-10" style={{fontSize: '40pt', color: '#100720'}}>{el.name}</h1>
             <div>
             <div className="">
             <div className="w-full">
