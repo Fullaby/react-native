@@ -55,10 +55,11 @@ export default function HomePage(){
         
     }
 
-    let deleteMyList=(id)=>{
-        let datas=JSON.parse(localStorage.getItem('listed'))
-       let newData= datas.listing.filter((el)=> el.id !== id )
-       localStorage.setItem('listed', JSON.stringify(newData))
+    let deleteMyList=(image)=>{
+      console.log(image);
+      let datas=JSON.parse(localStorage.getItem('listed'))
+       let newData= datas.listing.filter((el)=> el !== image )
+       localStorage.setItem('listed', JSON.stringify({listing: newData}))
        fetchLists()
     }
 
@@ -81,7 +82,7 @@ export default function HomePage(){
                   <div key={idx}
                     className="flex-none mr-8 rounded-lg hover:scale-125 hover:bg-red-200 transition-all duration-300 pb-16 pt-16 pl-10 pr-10"
                   >
-                    <button  className="space-y-4" onClick={()=> deleteMyList(mov.id)}>
+                    <button  className="space-y-4" onClick={()=> deleteMyList(mov)}>
                       <div className="aspect-w-16 aspect-h-6">
                         <img
                           className="object-cover shadow-md hover:shadow-xl rounded-lg"
